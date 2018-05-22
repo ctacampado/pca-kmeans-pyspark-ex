@@ -115,7 +115,7 @@ print ("Number of records: " + str(testdf.count()))
 
 #testdf = test_data.withColumnRenamed("prediction", "label")
 #again, use insert dataset code here
-testdf_2 = spark.read  .format('org.apache.spark.sql.execution.datasources.csv.CSVFileFormat')  .option('header', 'false')  .schema(mySchema)  .load(cos.url('testset_1b.csv', 'fsinnovationb103791316cf404cac6dab7db1175565'))
+testdf_2 = spark.read  .format('org.apache.spark.sql.execution.datasources.csv.CSVFileFormat')  .option('header', 'false')  .schema(mySchema)  .load(cos.url('<insert training set file name here>', '<project name and some project instance id??>'))
 
 testdf = testdf_2.withColumnRenamed("prediction", "label")
 predictions = model_rf.transform(testdf)
